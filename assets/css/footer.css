@@ -12,11 +12,13 @@ footer {
 }
 
 footer .links {
-    text-align: center;
+    padding-inline: .75em;
 }
 
 footer .links li {
     display: inline-block;
+
+    border-left: currentColor 2px solid;
 }
 
 footer .links a {

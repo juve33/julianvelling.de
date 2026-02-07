@@ -52,7 +52,7 @@ body {
     background-attachment: fixed;
     background-color: #fff;
     color: #000;
-    font-family: var(--main-font, sans-serif);
+    font-family: var(--main-font);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -72,11 +72,54 @@ body>* {
     box-sizing: border-box;
 }
 
+.background-image {
+    position: fixed;
+
+    max-width: unset;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+
+    z-index: -1;
+}
+
 main {
     grid-area: content;
 
     display: grid;
     align-items: center;
+
+    padding-top: 1.5rem;
+}
+
+.wrapper {
+    display: grid;
+    align-content: space-evenly;
+
+    border-radius: calc(2 * var(--content-padding));
+    min-height: 50%;
+    padding: calc(2 * var(--content-padding));
+
+    backdrop-filter: brightness(1.1);
+    box-shadow: 0px 0px 1rem 0px #0008;
+}
+
+@media (prefers-color-scheme: dark) {
+	.wrapper {
+        backdrop-filter: brightness(.85);
+        box-shadow: 0px 0px 1rem 0px #000a;
+	}
+}
+
+
+@media (min-width: 1000px) {
+    .wrapper {
+        border-radius: 1rem;
+        padding: 1rem;
+	}
 }
 
 .social {
@@ -91,7 +134,7 @@ main {
 
 main .social li,
 main nav li {
-    transition: transform .25s ease-out;
+    transition: transform .1s ease-out;
 }
 
 main .social li:hover {
@@ -127,4 +170,13 @@ p {
 
 p:last-child {
     margin-bottom: 0;
+}
+
+img[alt="Profile Picture"] {
+    height: 10rem;
+    width: 10rem;
+
+    border-radius: 50%;
+
+    object-fit: cover;
 }

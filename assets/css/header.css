@@ -1,20 +1,25 @@
 header {
+    --animation-duration: .25s;
+
     grid-area: header;
 
     position: fixed;
 
     padding-inline: initial;
 
-    font-size: 1.1rem;
     line-height: 4;
 
+    backdrop-filter: brightness(1.1);
     background: inherit;
     box-shadow: 0px 0px 1rem 0px #0008;
+
+    z-index: 10;
 }
 
 @media (prefers-color-scheme: dark) {
 	header {
-        box-shadow: initial;
+        backdrop-filter: brightness(.85);
+        box-shadow: 0px 0px 1rem 0px #000a;
 	}
 }
 
@@ -22,23 +27,11 @@ header {
     header {
         max-width: initial;
         width: 100%;
+
+        font-size: 1.1rem;
     }
 }
 
-@media (prefers-color-scheme: dark) {
-	header::after {
-        content: '';
-
-        display: block;
-
-        height: 2px;
-        width: 100%;
-
-        background-color: currentColor;
-
-        opacity: .5;
-    }
-}
 
 .header-wrapper {
     display: grid;
@@ -60,10 +53,18 @@ header {
 }
 
 header+* {
-    margin-top: calc(4.4rem + 1rem);
+    margin-top: 4rem;
+}
+
+@media (min-width: 1000px) {
+    header+* {
+        margin-top: 4.4rem;
+    }
 }
 
 nav {
+    padding-inline: .67em;
+
     line-height: 2;
     text-align: center;
 }
@@ -76,14 +77,87 @@ nav a {
     padding: .67em 1em;
 }
 
+header a[href="/"] {
+    position: relative;
+
+    padding-block: .5em;
+
+    font-family: var(--secondary-font);
+
+    opacity: .67;
+}
+
+header a[href="/"]::after {
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    bottom: calc(.25em + 1px);
+
+    height: 2px;
+    width: 100%;
+
+    background-color: currentColor;
+
+    transition: width var(--animation-duration);
+}
+
+header a[href="/"]:hover::after {
+    right: 0;
+    left: unset;
+
+    width: 0;
+
+    transition: width var(--animation-duration), right var(--animation-duration) 0s;
+}
+
 header nav,
 header .social {
     display: grid;
     align-content: center;
 }
 
+header nav {
+    padding-inline: .75em;
+
+    text-align: left;
+}
+
+@media (min-width: 1000px) {
+    header nav {
+        padding-left: 2.25em;
+    }
+}
+
 header nav a {
+    position: relative;
+
     padding: .5em .75em;
+}
+
+header nav a::after {
+    content: '';
+
+    position: absolute;
+
+    right: .75em;
+    bottom: calc(.25em + 1px);
+
+    height: 2px;
+    width: 0;
+
+    background-color: currentColor;
+
+    transition: width var(--animation-duration), right var(--animation-duration) 0s;
+}
+
+header nav a:hover:after {
+    left: .75em;
+
+    width: calc(100% - 1.5em);
+
+    transition: width var(--animation-duration);
 }
 
 header .social {
