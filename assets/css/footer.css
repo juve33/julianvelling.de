@@ -1,0 +1,32 @@
+footer {
+    grid-area: footer;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-block: 1em;
+
+    opacity: .67;
+}
+
+footer .links {
+    text-align: center;
+}
+
+footer .links li {
+    display: inline-block;
+}
+
+footer .links a {
+    padding: .5em .75em;
+}
+
+footer .social li {
+    font-size: 1.5em;
+}
+
+footer .social a {
+    padding: .125em;
+}

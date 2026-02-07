@@ -2,6 +2,4 @@
 layout: home
 ---
 
-# Julian Velling
-
-Lorem ipsum
+# Under Construction
