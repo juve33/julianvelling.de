@@ -1,0 +1,99 @@
+header {
+    grid-area: header;
+
+    position: fixed;
+
+    padding-inline: initial;
+
+    font-size: 1.1rem;
+    line-height: 4;
+
+    background: inherit;
+    box-shadow: 0px 0px 1rem 0px #0008;
+}
+
+@media (prefers-color-scheme: dark) {
+	header {
+        box-shadow: initial;
+	}
+}
+
+@media (min-width: 1000px) {
+    header {
+        max-width: initial;
+        width: 100%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+	header::after {
+        content: '';
+
+        display: block;
+
+        height: 2px;
+        width: 100%;
+
+        background-color: currentColor;
+
+        opacity: .5;
+    }
+}
+
+.header-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    justify-content: space-between;
+    
+    padding-inline: var(--content-padding);
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+@media (min-width: 1000px) {
+    .header-wrapper {
+        margin-inline: auto;
+        max-width: var(--content-width);
+        width: min(100%, var(--content-width));
+    }
+}
+
+header+* {
+    margin-top: calc(4.4rem + 1rem);
+}
+
+nav {
+    line-height: 2;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    padding: .67em 1em;
+}
+
+header nav,
+header .social {
+    display: grid;
+    align-content: center;
+}
+
+header nav a {
+    padding: .5em .75em;
+}
+
+header .social {
+    line-height: 1;
+}
+
+header .social a {
+    padding: .5em;
+}
+
+header .social a::after {
+    content: unset;
+}

@@ -1,0 +1,21 @@
+@property --main-font {
+    inherits: true;
+    initial-value: monospace;
+}
+
+@property --content-padding {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --content-width {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 1000px;
+}
+
+:root {
+    --content-padding: .4rem;
+    --content-width: 1000px;
+}
