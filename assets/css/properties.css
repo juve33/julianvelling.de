@@ -27,3 +27,15 @@
     --main-font: sans-serif;
     --secondary-font: monospace;
 }
+
+@media (min-width: 544px) {
+    :root {
+        --content-padding: 1.5rem;
+	}
+}
+
+@media (min-width: 1000px) {
+    :root {
+        --content-padding: 1rem;
+	}
+}
