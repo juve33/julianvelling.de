@@ -193,8 +193,15 @@ h1 {
     margin-bottom: .4em;
 
     font-family: var(--secondary-font);
+    font-size: 1.6em;
     text-align: center;
     text-transform: lowercase;
+}
+
+@media (min-width: 544px) {
+    h1 {
+        font-size: 2em;
+	}
 }
 
 h1::before {
@@ -209,4 +216,12 @@ h1::after {
 
 h2 {
     margin-bottom: .25em;
+
+    font-size: 1.4em;
+}
+
+@media (min-width: 544px) {
+    h1 {
+        font-size: 1.5em;
+	}
 }
