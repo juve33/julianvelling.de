@@ -23,7 +23,7 @@
             repeatCount="indefinite" />
     </circle>
 
-    <circle r="80" fill="#0f05" filter="url(#blur)">
+    <circle r="80" fill="#0a07" filter="url(#blur)">
         <animateMotion
             dur="35s"
             repeatCount="indefinite"

@@ -178,5 +178,35 @@ img[alt="Profile Picture"] {
 
     border-radius: 50%;
 
+    box-shadow: 0px 0px 1rem 0px #0008;
+
     object-fit: cover;
+}
+
+@media (prefers-color-scheme: dark) {
+	img[alt="Profile Picture"] {
+        box-shadow: 0px 0px 1rem 0px #000a;
+	}
+}
+
+h1 {
+    margin-bottom: .4em;
+
+    font-family: var(--secondary-font);
+    text-align: center;
+    text-transform: lowercase;
+}
+
+h1::before {
+    content: '{ "';
+    opacity: .67;
+}
+
+h1::after {
+    content: '" }';
+    opacity: .67;
+}
+
+h2 {
+    margin-bottom: .25em;
 }
