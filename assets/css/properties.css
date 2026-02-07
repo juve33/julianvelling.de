@@ -1,8 +1,3 @@
-@property --main-font {
-    inherits: true;
-    initial-value: monospace;
-}
-
 @property --content-padding {
     syntax: "<length>";
     inherits: true;
@@ -15,7 +10,20 @@
     initial-value: 1000px;
 }
 
+@property --main-font {
+    inherits: true;
+    initial-value: sans-serif;
+}
+
+@property --secondary-font {
+    inherits: true;
+    initial-value: monospace;
+}
+
 :root {
     --content-padding: .4rem;
     --content-width: 1000px;
+
+    --main-font: sans-serif;
+    --secondary-font: monospace;
 }
