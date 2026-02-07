@@ -115,7 +115,6 @@ header a[href="/"]:hover::after {
 
 header nav,
 header .social {
-    display: grid;
     align-content: center;
 }
 
@@ -167,8 +166,4 @@ header .social {
 
 header .social a {
     padding: .5em;
-}
-
-header .social a::after {
-    content: unset;
 }
