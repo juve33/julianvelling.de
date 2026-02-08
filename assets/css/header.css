@@ -164,6 +164,6 @@ header .social {
     line-height: 1;
 }
 
-header .social a {
-    padding: .5em;
+header .social li {
+    margin-left: .5em;
 }
