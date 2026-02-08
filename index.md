@@ -6,6 +6,6 @@ layout: home
 
 # Julian Velling
 
-Hi! My name is Julian and I do web design and development!
+Hi! :wave: My name is Julian and I do web design and development!
 
 This page is currently under construction, but more content is (probably) coming soon!
