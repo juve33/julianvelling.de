@@ -104,13 +104,15 @@ header a[href="/"]::after {
     transition: width var(--animation-duration);
 }
 
-header a[href="/"]:hover::after {
-    right: 0;
-    left: unset;
+@media (prefers-reduced-motion: no-preference) {
+    header a[href="/"]:hover::after {
+        right: 0;
+        left: unset;
 
-    width: 0;
+        width: 0;
 
-    transition: width var(--animation-duration), right var(--animation-duration) 0s;
+        transition: width var(--animation-duration), right var(--animation-duration) 0s;
+    }
 }
 
 header nav,
