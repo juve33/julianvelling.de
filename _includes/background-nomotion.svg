@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="background-image no-motion"
+ version="1.1" baseProfile="full"
+ viewBox="0 0 1000 1000"
+ preserveAspectRatio="xMidYMid slice">
+
+    <filter id="blur-nomotion"
+        x="-15%" y="-15%"
+        width="130%" height="130%">
+
+        <feGaussianBlur stdDeviation="10" />
+    </filter>
+
+
+    <circle r="130" cx="350" cy="375" fill="#00d4" filter="url(#blur-nomotion)" />
+    <circle r="190" cx="825" cy="225" fill="#a0a7" filter="url(#blur-nomotion)" />
+    <circle r="170" cx="450" cy="600" fill="#f805" filter="url(#blur-nomotion)" />
+    <circle r="45" cx="140" cy="450" fill="#a0a7" filter="url(#blur-nomotion)" />
+    <circle r="70" cx="770" cy="750" fill="#00d4" filter="url(#blur-nomotion)" />
+</svg>
