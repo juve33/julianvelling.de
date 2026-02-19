@@ -1,3 +1,6 @@
+@import url(https://fonts.bunny.net/css?family=albert-sans:400,400i,700,700i,900,900i);
+@import url(https://fonts.bunny.net/css?family=fira-code:400,600);
+
 @property --content-padding {
     syntax: "<length>";
     inherits: true;
@@ -24,8 +27,8 @@
     --content-padding: .4rem;
     --content-width: 1000px;
 
-    --main-font: sans-serif;
-    --secondary-font: monospace;
+    --main-font: 'Albert Sans', sans-serif;
+    --secondary-font: 'Fira Code', monospace;
 }
 
 @media (min-width: 544px) {
