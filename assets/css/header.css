@@ -105,6 +105,7 @@ header a[href="/"]::after {
 }
 
 @media (prefers-reduced-motion: no-preference) {
+    header a[href="/"]:focus::after,
     header a[href="/"]:hover::after {
         right: 0;
         left: unset;
@@ -154,6 +155,7 @@ header nav a::after {
     transition: width var(--animation-duration), right var(--animation-duration) 0s;
 }
 
+header nav a:focus:after,
 header nav a:hover:after {
     left: .75em;
 

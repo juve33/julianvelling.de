@@ -19,6 +19,7 @@
 html {
 	text-rendering: optimizeLegibility;
 	font-size: 16px;
+    line-height: 1.4;
 }
 
 @media (min-width: 992px) {
@@ -114,7 +115,7 @@ main {
     align-content: space-evenly;
 
     border-radius: calc(2 * var(--content-padding));
-    min-height: 50%;
+    min-height: min(50%, 15rem);
     padding: calc(2 * var(--content-padding));
 
     backdrop-filter: brightness(1.1);
@@ -151,6 +152,7 @@ main nav li {
     transition: transform .1s ease-out;
 }
 
+main .social li:has(:focus),
 main .social li:hover {
     transform: scale(1.1);
 }
@@ -174,6 +176,7 @@ main nav li {
     border: currentColor 2px solid;
 }
 
+main nav li:has(:focus),
 main nav li:hover {
     transform: scale(1.05);
 }
