@@ -31,4 +31,6 @@ footer .social li {
 
 footer .social a {
     padding: .125em;
+
+    line-height: 1;
 }
