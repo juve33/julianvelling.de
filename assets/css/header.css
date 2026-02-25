@@ -172,9 +172,9 @@ header .social-wrapper {
     transition: grid-template-rows var(--transition-duration), opacity var(--transition-duration);
 }
 
-header :has(:focus) nav,
+header :has(a:focus) nav,
 header .open nav,
-header :has(:focus) .social-wrapper,
+header :has(a:focus) .social-wrapper,
 header .open .social-wrapper {
     grid-template-rows: 1fr;
 
@@ -196,9 +196,9 @@ header .social-wrapper>* {
         transition: none;
     }
 
-    header :has(:focus) nav,
+    header :has(a:focus) nav,
     header .open nav,
-    header :has(:focus) .social-wrapper,
+    header :has(a:focus) .social-wrapper,
     header .open .social-wrapper {
         transition: none;
     }
@@ -271,7 +271,7 @@ header .social {
     transition: padding-block var(--transition-duration);
 }
 
-header :has(:focus) .social,
+header :has(a:focus) .social,
 header .open .social {
     padding-block: 1.5em;
 }
