@@ -86,6 +86,8 @@ nav a {
 }
 
 header a[href="/"] {
+    display: block;
+    
     position: relative;
 
     padding-block: 1.5em;
@@ -94,12 +96,6 @@ header a[href="/"] {
     text-transform: lowercase;
 
     opacity: .67;
-}
-
-@media (min-width: 1000px) {
-    header a[href="/"] {
-        padding-block: 1.3333em;
-    }
 }
 
 header a[href="/"]::after {
