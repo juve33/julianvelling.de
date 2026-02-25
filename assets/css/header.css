@@ -7,7 +7,7 @@ header {
 
     padding-inline: initial;
 
-    line-height: 4;
+    line-height: 1;
 
     backdrop-filter: brightness(1.05) blur(3px);
     box-shadow: 0px 0px 1rem 0px #0007;
@@ -33,18 +33,25 @@ header {
 
 
 .header-wrapper {
+    --transition-duration: .5s;
+
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 100%;
     justify-content: space-between;
     
     padding-inline: var(--content-padding);
+    max-height: 100vh;
+    max-height: 100dvh;
     width: 100%;
 
     box-sizing: border-box;
+    overflow-y: scroll;
 }
 
 @media (min-width: 1000px) {
     .header-wrapper {
+        grid-template-columns: auto 1fr auto;
+
         margin-inline: auto;
         max-width: var(--content-width);
         width: min(100%, var(--content-width));
@@ -64,7 +71,7 @@ header+* {
 nav {
     padding-inline: .67em;
 
-    line-height: 2;
+    line-height: 1;
     text-align: center;
 }
 
@@ -81,12 +88,18 @@ nav a {
 header a[href="/"] {
     position: relative;
 
-    padding-block: .5em;
+    padding-block: 1.5em;
 
     font-family: var(--secondary-font);
     text-transform: lowercase;
 
     opacity: .67;
+}
+
+@media (min-width: 1000px) {
+    header a[href="/"] {
+        padding-block: 1.3333em;
+    }
 }
 
 header a[href="/"]::after {
@@ -95,7 +108,7 @@ header a[href="/"]::after {
     position: absolute;
 
     left: 0;
-    bottom: calc(.25em + 1px);
+    bottom: calc(1.1em + 1px);
 
     height: 2px;
     width: 100%;
@@ -117,27 +130,109 @@ header a[href="/"]::after {
     }
 }
 
+header .title {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-content: center;
+}
+
+@media (min-width: 1000px) {
+    header .title {
+        display: initial;
+        grid-template-columns: unset;
+    }
+
+    .spacer {
+        display: none;
+    }
+}
+
+.hamburger-menu {
+    aspect-ratio: 1/1;
+    border: none;
+    height: 100%;
+
+    background: none;
+    font-size: 1.5em;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+@media (min-width: 1000px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
 header nav,
-header .social {
+header .social-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    opacity: 0;
+    transition: grid-template-rows var(--transition-duration), opacity var(--transition-duration);
+}
+
+header .open nav,
+header .open .social-wrapper {
+    grid-template-rows: 1fr;
+
+    opacity: 1;
+    transition: grid-template-rows var(--transition-duration), opacity var(--transition-duration) calc(.5 * var(--transition-duration));
+}
+
+header nav>*,
+header .social-wrapper>* {
+    overflow: hidden;
+}
+
+@media (min-width: 1000px) {
+    header nav,
+    header .social-wrapper {
+        display: initial;
+
+        opacity: 1;
+        transition: none;
+    }
+
+    header .open nav,
+    header .open .social-wrapper {
+        transition: none;
+    }
+}
+
+header nav,
+header .social-wrapper {
     align-content: center;
 }
 
 header nav {
     padding-inline: .75em;
-
-    text-align: left;
 }
 
 @media (min-width: 1000px) {
     header nav {
         padding-left: 2.25em;
+        
+        text-align: left;
+    }
+}
+
+header nav li {
+    display: block;
+}
+
+@media (min-width: 1000px) {
+    header nav li {
+        display: inline-block;
     }
 }
 
 header nav a {
     position: relative;
 
-    padding: .5em .75em;
+    padding: 1.5em .75em;
 }
 
 header nav a::after {
@@ -146,7 +241,7 @@ header nav a::after {
     position: absolute;
 
     right: .75em;
-    bottom: calc(.25em + 1px);
+    bottom: calc(1.1em + 1px);
 
     height: 2px;
     width: 0;
@@ -166,7 +261,20 @@ header nav a:hover:after {
 }
 
 header .social {
-    line-height: 1;
+    transition: padding-block var(--transition-duration);
+}
+
+header .open .social {
+    padding-block: 1.5em;
+}
+
+@media (min-width: 1000px) {
+    header .social {
+        height: initial;
+        padding-block: 0 !important;
+
+        transition: none;
+    }
 }
 
 header .social li {
