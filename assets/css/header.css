@@ -55,6 +55,8 @@ header {
         margin-inline: auto;
         max-width: var(--content-width);
         width: min(100%, var(--content-width));
+
+        overflow-y: visible;
     }
 }
 
@@ -170,7 +172,9 @@ header .social-wrapper {
     transition: grid-template-rows var(--transition-duration), opacity var(--transition-duration);
 }
 
+header :has(:focus) nav,
 header .open nav,
+header :has(:focus) .social-wrapper,
 header .open .social-wrapper {
     grid-template-rows: 1fr;
 
@@ -192,9 +196,16 @@ header .social-wrapper>* {
         transition: none;
     }
 
+    header :has(:focus) nav,
     header .open nav,
+    header :has(:focus) .social-wrapper,
     header .open .social-wrapper {
         transition: none;
+    }
+
+    header nav>*,
+    header .social-wrapper>* {
+        overflow: visible;
     }
 }
 
@@ -260,6 +271,7 @@ header .social {
     transition: padding-block var(--transition-duration);
 }
 
+header :has(:focus) .social,
 header .open .social {
     padding-block: 1.5em;
 }
