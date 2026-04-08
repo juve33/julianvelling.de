@@ -20,6 +20,8 @@ html {
 	text-rendering: optimizeLegibility;
 	font-size: 16px;
     line-height: 1.4;
+
+    scrollbar-gutter: stable;
 }
 
 @media (min-width: 992px) {
@@ -42,9 +44,9 @@ html, body {
 body {
     display: grid;
     grid-template:
-        "header" min-content
-        "content" auto
-        "footer" min-content;
+        "header" auto
+        "content" 1fr
+        "footer" auto;
     
 
     min-height: 100vh;
