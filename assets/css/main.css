@@ -53,14 +53,14 @@ body {
     min-height: 100svh;
 
     background-attachment: fixed;
-    background-color: #fff;
+    background-color: #efe;
     color: #000;
     font-family: var(--main-font);
 }
 
 @media (prefers-color-scheme: dark) {
 	body {
-		background-color: #222;
+		background-color: #020b00;
 		color: #fff;
 	}
 }

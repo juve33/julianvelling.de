@@ -31,6 +31,12 @@ header {
     }
 }
 
+@media print {
+    header {
+        position: absolute;
+    }
+}
+
 
 .header-wrapper {
     --transition-duration: .5s;
